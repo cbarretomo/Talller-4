@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALL CENTER</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>TELE<b>COL</b></h1>
+            </div>
+
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li class="menu-selected"><a href="/" class="text-menu-selected">INDIVIDUAL</a></li>
+                        <li><a href="/DOCUMENTO">DOCUMENTO</a></li>
+                        <li><a href="/ENTRENAMIENTO">ENTRENAMIENTO</a></li>
+                        <li><a href="/MODELO">MODELO</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2 align="center">CONSULTA INDIVIDUAL</h2>
+    <br>
+    <p>Por favor ingrese todos los datos requeridos del cliente</p>
+    <br>
+    <form id = "myForm" action="/" method="POST">
+        <p> Gender: <input type="radio" name="gender" value=Female>Female <input type="radio" name="gender" value=Male>Male</p>
+        <br>
+        <p> SeniorCitizen: <input type="radio" name="SeniorCitizen" value=0>0 <input type="radio" name="SeniorCitizen" value=1>1</p>
+        <br>
+        <p> Partner: <input type="radio" name="Partner" value=Yes>Yes <input type="radio" name="Partner" value=No>No</p>
+        <br>
+        <p> Dependents: <input type="radio" name="Dependents" value=Yes>Yes <input type="radio" name="Dependents" value=No>No</p>
+        <br>
+        <p>Tenure: <input type="integer" name="tenure"></p>
+        <br>
+        <p> PhoneService: <input type="radio" name="PhoneService" value=Yes>Yes <input type="radio" name="PhoneService" value=No>No</p>
+        <br>
+        <p> PhoneService: <input type="radio" name="MultipleLines" value=Yes>Yes <input type="radio" name="MultipleLines" value=No>No <input type="radio" name="MultipleLines" value='No phone service'>No phone service</p>
+        <br>
+        <p> InternetService: <input type="radio" name="InternetService" value=DSL>DSL <input type="radio" name="InternetService" value='Fiber optic'>Fiber optic <input type="radio" name="InternetService" value=No>No</p>
+        <br>
+        <p> OnlineSecurity: <input type="radio" name="OnlineSecurity" value=Yes>Yes <input type="radio" name="OnlineSecurity" value=No>No <input type="radio" name="OnlineSecurity" value='No internet service'>No internet service</p>
+        <br>
+        <p> OnlineBackup: <input type="radio" name="OnlineBackup" value=Yes>Yes <input type="radio" name="OnlineBackup" value=No>No <input type="radio" name="OnlineBackup" value='No internet service'>No internet service</p>
+        <br>
+        <p> DeviceProtection: <input type="radio" name="DeviceProtection" value=Yes>Yes <input type="radio" name="DeviceProtection" value=No>No <input type="radio" name="DeviceProtection" value='No internet service'>No internet service</p>
+        <br>
+        <p> TechSupport: <input type="radio" name="TechSupport" value=Yes>Yes <input type="radio" name="TechSupport" value=No>No <input type="radio" name="TechSupport" value='No internet service'>No internet service</p>
+        <br>
+        <p> StreamingTV: <input type="radio" name="StreamingTV" value=Yes>Yes <input type="radio" name="StreamingTV" value=No>No <input type="radio" name="StreamingTV" value='No internet service'>No internet service</p>
+        <br>
+        <p> StreamingMovies: <input type="radio" name="StreamingMovies" value=Yes>Yes <input type="radio" name="StreamingMovies" value=No>No <input type="radio" name="StreamingMovies" value='No internet service'>No internet service</p>
+        <br>
+        <p> Contract: <input type="radio" name="Contract" value=Month-to-month>Month-to-month <input type="radio" name="Contract" value='One year'>One year <input type="radio" name="Contract" value='Two year'>Two year</p>
+        <br>
+        <p> PaperlessBilling: <input type="radio" name="PaperlessBilling" value=Yes>Yes <input type="radio" name="PaperlessBilling" value=No>No</p>
+        <br>
+        <p> PaymentMethod: <select name="PaymentMethod">
+            <option selected>...</option>
+            <option value='Electronic check'>Electronic check</option>
+            <option value='Mailed check'>Mailed check</option>
+            <option value='Bank transfer (automatic)'>Bank transfer (automatic)</option>
+            <option value='Credit card (automatic)'>Credit card (automatic)</option></select></p>
+        <br>
+        <p>MonthlyCharges: <input type="integer" name="MonthlyCharges"></p>
+        <br>
+        <p>TotalCharges: <input type="integer" name="TotalCharges"></p>
+        <br>
+        <input type="submit" value = OK />
+    </form>
+    <br>
+    <p>Resultados obtenidos</p>
+    <table class="center">
+        <tr>
+          <td style="text-align: center; vertical-align: middle;", class="center">
+          {% for table in tables %}
+              {{ table|safe }}
+          {% endfor %}
+          </td>  
+        </tr>
+    </table>
+    <div class="container-footer">
+        <footer>
+            <div class="logo-footer">
+                <img src="../static/img/img3.png" alt="">
+            </div>
+            <h7>BANCO COLOMBIA</h7>
+            <hr>
+            <h8>CONSULTA CHURN</h8>
+        </footer>
+    </div>
+    <br>
+    <br>
+</body>
+</html>

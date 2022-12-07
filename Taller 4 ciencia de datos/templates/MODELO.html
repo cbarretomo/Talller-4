@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALL CENTER</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>TELE<b>COL</b></h1>
+            </div>
+
+            <div class="menu">
+                <nav>
+                    <ul>
+                        <li><a href="/" >INDIVIDUAL</a></li>
+                        <li><a href="/DOCUMENTO">DOCUMENTO</a></li>
+                        <li><a href="/ENTRENAMIENTO">ENTRENAMIENTO</a></li>
+                        <li class="menu-selected"><a href="/MODELO" class="text-menu-selected">MODELO</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2 align="center">CONSULTA DOCUMENTO POR MODELO</h2>
+    <br>
+    <p>Por favor adjunte el documento con los clientes (.json)</p>
+    <br>
+    <form id = "myForm" action="/MODELO" method="POST">
+        <br>
+        <input type="file" name="archivosubido" accept=".json"></input>
+        <br>
+    <p>Seleccione el modelo que desea utilizar</p>
+        <br>
+        <p> Modelo: <select name="modelo">
+            <option selected>...</option>
+            <option value='best_grid_search_pipeline.pkl'>Modelo Actual</option>
+            <option value='best_grid_search_pipeline2.pkl'>Modelo Nuevo</option></select>
+        <br>
+        <br>
+        <input type="submit" value = OK />
+    </form>
+    <br>
+    <p>Resultados obtenidos</p>
+    <table class="center">
+        <tr>
+          <td style="text-align: center; vertical-align: middle;", class="center">
+          {% for table in tables %}
+              {{ table|safe }}
+          {% endfor %}
+          </td>  
+        </tr>
+    </table>
+    <div class="container-footer">
+        <footer>
+            <div class="logo-footer">
+                <img src="/static/img/img3.png" alt="">
+            </div>
+            <h7>BANCO COLOMBIA</h7>
+            <hr>
+            <h8>CONSULTA CHURN</h8>
+        </footer>
+    </div>
+    <br>
+    <br>
+</body>
+</html>
